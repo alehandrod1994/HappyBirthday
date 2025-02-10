@@ -60,22 +60,14 @@ namespace HappyBirthday.BL.Controller
         /// <returns> Результат операции. </returns>
         public string ToString(List<Citizen> citizens)
         {
-            StringBuilder inLineCitizenNames = new StringBuilder();
+            string inLineCitizenNames = "";
 
             if (citizens != null)
             {
-                foreach (Citizen citizen in citizens)
-                {
-                    inLineCitizenNames.Append(citizen.Name + ", ");
-                }
-
-                if (inLineCitizenNames.Length > 0)
-                {
-                    inLineCitizenNames = inLineCitizenNames.Remove(inLineCitizenNames.Length - 2, 2);
-                }
+                inLineCitizenNames = string.Join(", ", citizens);
             }
 
-            return inLineCitizenNames.ToString();
+            return inLineCitizenNames;
         }
 
         /// <summary>

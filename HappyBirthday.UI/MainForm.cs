@@ -258,6 +258,7 @@ namespace HappyBirthday.UI
         {
             SetUiForStartSave();
 
+            _report.SelectedBirthdayCitizens = _report.SelectedBirthdayCitizens.Except(_report.SelectedAnniversaryCitizens).ToList();
             _report.SelectedAnniversaryCitizens.Reverse();
             _report.SelectedBirthdayCitizens.Reverse();
             _report.Poem = PoemBox.Text;
